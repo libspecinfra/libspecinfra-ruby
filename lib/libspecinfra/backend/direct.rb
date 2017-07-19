@@ -5,7 +5,7 @@ class Libspecinfra::Backend::Direct < FFI::AutoPointer
 
   module Binding
     extend FFI::Library
-    ffi_lib '../specinfra/target/debug/libspecinfra.dylib'
+    ffi_lib ['../specinfra/target/debug/libspecinfra.dylib', 'libspecinfra']
 
     attach_function :new, :backend_direct_new,
                     [], Libspecinfra::Backend::Direct
