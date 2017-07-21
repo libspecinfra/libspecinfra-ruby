@@ -1,1 +1,1 @@
-module Libspecinfra::Backend;end
+module Libspecinfra::Backend; end
