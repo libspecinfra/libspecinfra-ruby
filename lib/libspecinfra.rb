@@ -24,8 +24,15 @@ module Libspecinfra
 
       attach_function :new, :specinfra_new,
                       [:pointer], Specinfra
-      attach_function :free, :backend_direct_free,
-                      [Libspecinfra::Backend::Direct], :void
+      attach_function :free, :specinfra_free,
+                      [Specinfra], :void
     end
   end
 end
+
+
+
+
+
+
+
