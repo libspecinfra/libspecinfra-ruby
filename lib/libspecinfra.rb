@@ -14,10 +14,6 @@ module Libspecinfra
       Binding.free(ptr)
     end
 
-    def echo
-      Binding.echo(self)
-    end
-
     module Binding
       extend FFI::Library
       ffi_lib ['../specinfra/target/debug/libspecinfra.dylib', 'libspecinfra']
