@@ -1,5 +1,5 @@
 module Libspecinfra::Backend
-  class Direct < FFI::AutoPointer
+  class SSH < FFI::AutoPointer
     def self.release(ptr)
       Binding.free(ptr)
     end
@@ -8,9 +8,9 @@ module Libspecinfra::Backend
       extend FFI::Library
       ffi_lib ['libspecinfra']
 
-      attach_function :new, :backend_direct_new,
-                      [], Direct
-      attach_function :free, :backend_direct_free,
+      attach_function :new, :backend_ssh_new,
+                      [:string], Direct
+      attach_function :free, :backend_ssh_free,
                       [Direct], :void
     end
   end
